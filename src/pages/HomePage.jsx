@@ -68,19 +68,19 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-custom-green-dark via-custom-green to-custom-green-dark">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg')] bg-cover bg-center opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
             Tecnología de Vanguardia en
-            <span className="block text-emerald-400">Reparación de Dispositivos Apple</span>
+            <span className="block text-white/90">Reparación de Dispositivos Apple</span>
           </h1>
-          <p className="text-lg md:text-xl text-emerald-100 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">
+          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in delay-100">
             Expertos certificados en reparación y mantenimiento de dispositivos Apple.
             Calidad garantizada y servicio premium.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-200">
-            <Link to="/contacto" className="bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+            <Link to="/contacto" className="bg-white text-custom-green px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
               Solicitar Diagnóstico
             </Link>
             <Link to="/servicios" className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1">
@@ -96,10 +96,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-emerald-50 rounded-2xl p-8 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-                <div className="text-4xl font-bold text-emerald-600 mb-2">{stat.number}</div>
-                <div className="text-xl font-semibold text-emerald-900 mb-2">{stat.title}</div>
-                <div className="text-emerald-700">{stat.description}</div>
+              <div key={index} className="bg-custom-green-light rounded-2xl p-8 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                <div className="text-4xl font-bold text-custom-green mb-2">{stat.number}</div>
+                <div className="text-xl font-semibold text-custom-green mb-2">{stat.title}</div>
+                <div className="text-custom-green/80">{stat.description}</div>
               </div>
             ))}
           </div>
@@ -107,13 +107,13 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-emerald-50">
+      <section className="py-20 bg-custom-green-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-custom-green mb-4">
               Nuestros Servicios Especializados
             </h2>
-            <p className="text-lg text-emerald-700 max-w-3xl mx-auto">
+            <p className="text-lg text-custom-green/80 max-w-3xl mx-auto">
               Ofrecemos soluciones profesionales para todos tus dispositivos Apple
             </p>
           </div>
@@ -125,8 +125,8 @@ export default function HomePage() {
                 onClick={() => setSelectedDevice(device)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   selectedDevice === device
-                    ? 'bg-emerald-600 text-white shadow-lg'
-                    : 'bg-white text-emerald-600 hover:bg-emerald-50'
+                    ? 'bg-custom-green text-white shadow-lg'
+                    : 'bg-white text-custom-green hover:bg-custom-green-light'
                 }`}
               >
                 {device.charAt(0).toUpperCase() + device.slice(1)}
@@ -136,23 +136,23 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold text-emerald-900 mb-4">
+              <h3 className="text-2xl font-bold text-custom-green mb-4">
                 {deviceContent[selectedDevice].title}
               </h3>
-              <p className="text-emerald-700 mb-6">
+              <p className="text-custom-green/80 mb-6">
                 {deviceContent[selectedDevice].description}
               </p>
               <ul className="space-y-4">
                 {deviceContent[selectedDevice].features.map((feature, index) => (
-                  <li key={index} className="flex items-center text-emerald-700">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></span>
+                  <li key={index} className="flex items-center text-custom-green/80">
+                    <span className="w-2 h-2 bg-custom-green rounded-full mr-3"></span>
                     {feature}
                   </li>
                 ))}
               </ul>
               <Link
                 to="/servicios"
-                className="inline-block mt-8 bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                className="inline-block mt-8 bg-custom-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-custom-green-dark transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
               >
                 Ver Detalles
               </Link>
@@ -164,7 +164,7 @@ export default function HomePage() {
                   alt={deviceContent[selectedDevice].title}
                   className="w-full h-[400px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-custom-green/50 to-transparent"></div>
               </div>
             </div>
           </div>
@@ -172,17 +172,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-emerald-900 text-white">
+      <section className="py-20 bg-custom-green text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             ¿Necesitas ayuda con tu dispositivo?
           </h2>
-          <p className="text-lg text-emerald-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Nuestro equipo de expertos está listo para ayudarte. Contacta con nosotros para un diagnóstico gratuito.
           </p>
           <Link
             to="/contacto"
-            className="inline-block bg-white text-emerald-900 px-8 py-4 rounded-lg font-semibold hover:bg-emerald-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            className="inline-block bg-white text-custom-green px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
           >
             Contactar Ahora
           </Link>
